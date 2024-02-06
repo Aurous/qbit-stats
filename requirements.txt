@@ -1,0 +1,7 @@
+Flask==3.0.2
+Flask_APScheduler==1.13.1
+Flask_Cors==4.0.0
+Flask_SocketIO==5.3.6
+qbittorrent_api==2024.1.58
+flaskwebgui==1.0.8
+python-dotenv==1.0.1
