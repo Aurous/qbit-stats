@@ -50,7 +50,7 @@ export default class Totals extends React.Component {
 
     render() {
         return (
-            <Grid item xs={12} sx={{ maxHeight: 160, minHeight: 160 }}>
+            <Grid item xs={4}>
                 <Typography align="center" variant="h5">Totals</Typography>
                 <Grid container direction="row" justify="center" alignItems="stretch" >
                     <Item label="Download" data={this.getDownload() } />

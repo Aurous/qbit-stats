@@ -1,3 +1,5 @@
 import { io } from 'socket.io-client';
 
-export default io(window.location.origin);
+const url = (process.env.NODE_ENV === 'development') ? 'localhost:8080' : window.location.origin;
+
+export default io(url);

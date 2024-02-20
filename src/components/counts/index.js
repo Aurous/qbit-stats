@@ -18,13 +18,15 @@ export default class Totals extends React.Component {
 
   render() {
     return (
+      <Grid xs={4}>
       <Grid container direction="row" justify="center" alignItems="stretch" >
-        <Grid item xs={6} sx={{ maxHeight: 160 }}>
-          <Item label="Active Down" data={this.getDownload()} />
+        <Grid item xs={6}>
+          <Item label="Down Count" data={this.getDownload()} />
         </Grid>
-        <Grid item xs={6} sx={{ maxHeight: 160 }}>
-          <Item label="Active Up" data={this.getUpload()} />
+        <Grid item xs={6}>
+          <Item label="Up Count" data={this.getUpload()} />
         </Grid>
+      </Grid>
       </Grid>
     )
   }

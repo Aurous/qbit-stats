@@ -17,16 +17,10 @@ export default class Container extends React.Component {
         } = serverState;
         return (
             <Grid container direction="row" justify="center" alignItems="stretch" > 
-                <Grid item xs={4}>
-                    <Totals download={alltime_dl} upload={alltime_ul} />
-                    <Chart download={dl_info_speed} upload={up_info_speed} />
-                    <Counts torrents={torrents} />
-                </Grid>
-                <Grid item xs={8}>
-                    <Grid style={{ height: "100%" }}>
-                        <List torrents={torrents} />
-                    </Grid>
-                </Grid>
+                <Totals download={alltime_dl} upload={alltime_ul} />
+                <Chart download={dl_info_speed} upload={up_info_speed} />
+                {/* <Counts torrents={torrents} /> */}
+                <List torrents={torrents} />
             </Grid>
         );
     }

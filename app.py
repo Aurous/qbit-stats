@@ -1,3 +1,4 @@
+import sys
 from dotenv import dotenv_values
 from flask_apscheduler import APScheduler
 from flask import Flask, render_template
@@ -44,18 +45,19 @@ def send_data():
 
 if __name__ == "__main__":
     scheduler.start()
-    config = {
-        "app": app,
-        "socketio": socketio,
-        "server": "flask_socketio",
-        "width": 800,
-        "height": 480,
-    }
-    FlaskUI(**config).run()
-
-    # config = {
-    #     "host": "localhost",
-    #     "port": 8080,
-    #     "debug": True
-    # }
-    # socketio.run(app, **config)
+    if len(sys.argv) > 1 and sys.argv[1] == 'local':   
+        config = {
+            "host": "localhost",
+            "port": 8080,
+            "debug": True
+        }
+        socketio.run(app, **config)
+    else:
+        config = {
+            "app": app,
+            "socketio": socketio,
+            "server": "flask_socketio",
+            "width": 800,
+            "height": 480,
+        }
+        FlaskUI(**config).run()

@@ -4,7 +4,6 @@ import { Grid, Typography } from "@mui/material";
 export default class Totals extends React.Component {
   render() {
     return (
-      <Grid item xs={12}>
         <Grid container direction="row" justify="center" alignItems="stretch" >
           <Grid item xs={6} >
             <Typography variant="h5" >
@@ -17,7 +16,6 @@ export default class Totals extends React.Component {
             </Typography>
           </Grid>
         </Grid>
-      </Grid >
     )
   }
 }

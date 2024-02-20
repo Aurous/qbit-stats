@@ -6,6 +6,7 @@ class Parser {
     convert = () => (!+this.value) ? '0B' : `${parseFloat((this.value / Math.pow(1024, Math.floor(Math.log(this.value) / Math.log(1024)))).toFixed(2))} ${['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'][Math.floor(Math.log(this.value) / Math.log(1024))]}`;
     live = () => `${this.convert()}/s`;
     round = (r = 2) => isNaN(this.value) ? 0 : parseFloat(this.value).toFixed(r);
+    toMB = () => isNaN(this.value) ? 0 : Math.ceil((this.value / (1024 * 1024)));
 }
 
 const parse = (value) => new Parser(value);
